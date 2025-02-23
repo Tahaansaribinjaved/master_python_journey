@@ -1,18 +1,18 @@
 contacts = {}
 
 def add_contact():
-    name = input("Enter contact name: ")
-    phone = input("Enter phone number: ")
-    contacts[name] = phone
-    print(f"Contact {name} added successfully!\n")
-
+    name = input("Enter contact Name :")
+    number = input("Enter contact number :")
+    contacts[name.lower()] = number
+    print(f"Contact {name} added succefully ! \n")
+    
 def view_contacts():
-    if not contacts:
-        print("No contacts found.\n")
+    if not contacts :
+        print('Contact not found \n')
         return
-    print("\nContact List:")
-    for name, phone in contacts.items():
-        print(f"{name}: {phone}")
+    print('\n Contact List')
+    for name,number in contacts.items():
+        print(f"{name.capitalize()} : {number}")
     print()
 def search_contact():
     name = input("Enter name to search: ").lower()  # Convert input to lowercase
@@ -20,7 +20,6 @@ def search_contact():
         print(f"{name.capitalize()} : {contacts[name]}\n")  # Capitalize name for display
     else:
         print("Contact not found.\n")
-
 
 def update_contact():
     name = input("Enter name to update: ")
@@ -30,7 +29,6 @@ def update_contact():
         print(f"Contact {name} updated successfully!\n")
     else:
         print("Contact not found.\n")
-
 def delete_contact():
     name = input("Enter name to delete: ")
     if name in contacts:
@@ -38,9 +36,9 @@ def delete_contact():
         print(f"Contact {name} deleted successfully!\n")
     else:
         print("Contact not found.\n")
-
-def main():
-    while True:
+        
+def main(): 
+    while True :
         print("\nContact Book")
         print("1. Add Contact")
         print("2. View Contacts")
@@ -69,3 +67,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+    
